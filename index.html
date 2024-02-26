@@ -56,6 +56,14 @@
             moveSlide(direction)
         }, 500))
 
+        window.addEventListener('keydown', (e) =>{
+            const code = e.keyCode
 
+            if (code == 40)
+                moveSlide(1)
+
+            if (code == 38)
+                moveSlide(-1)
+        })
     </script>
 </html>
