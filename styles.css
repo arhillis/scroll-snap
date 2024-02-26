@@ -1,3 +1,23 @@
+:root{
+    --white-hsl: hsl(0,0%,100%);
+    --black-hsl: hsl(0,0%,0%);
+    --safeLightAccent-hsl: hsl(204.39,79.49%,38.24%);
+    --safeDarkAccent-hsl: hsl(204.39,79.49%,38.24%);
+    --safeInverseAccent-hsl: 0,0%,100%;
+    --safeInverseLightAccent-hsl: 0,0%,100%;
+    --safeInverseDarkAccent-hsl: hsl(0,0%,100%);
+    --accent-hsl: hsl(204.39,79.49%,38.24%);
+    --lightAccent-hsl: hsl(240,10.53%,92.55%);
+    --darkAccent-hsl: hsl(209.23,52.7%,70.98%);
+ }
+
+html{
+    scroll-snap-type: y mandatory;
+}
+
 body{
-    background: red;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--black-hsl);
+    background-color: var(--lightAccent-hsl);
 }
