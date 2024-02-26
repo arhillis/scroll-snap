@@ -13,5 +13,24 @@
         <section id="projects">Three</section>
         <section id="contact">Four</section>
     </main> 
-</body>
+    <script>
+        const sections = document.querySelectorAll('section');
+        let currentSlide = 0;
+
+        window.addEventListener('wheel', (e) =>{
+            const direction = e.deltaY > 0 ? 1 : -1;
+
+            if(direction == 1 && currentSlide < sections.length - 1){
+                sections[currentSlide].classList.remove('active')
+                currentSlide++;
+                sections[currentSlide].classList.add('active');
+            }
+
+            if(direction == -1 && currentSlide > 0){
+                sections[currentSlide].classList.remove('active')
+                currentSlide--;
+                sections[currentSlide].classList.add('active');
+            }
+        })
+    </script>
 </html>
