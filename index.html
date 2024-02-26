@@ -17,10 +17,7 @@
         const sections = document.querySelectorAll('section');
         let currentSlide = 0;
 
-
-        window.addEventListener('wheel', (e) =>{
-            const direction = e.deltaY > 0 ? 1 : -1;
-
+        const moveSlide = direction =>{
             if(direction == 1 && currentSlide < sections.length - 1){
                 sections[currentSlide].classList.remove('active')
                 currentSlide++;
@@ -31,8 +28,33 @@
                 sections[currentSlide].classList.remove('active')
                 currentSlide--;
                 sections[currentSlide].classList.add('active');
+            }           
+        }
+
+        const debounce = (callback, delay) => {
+            return (...args) =>{
+                setTimeout(() =>{
+                    callback(...args)
+                }, delay)
             }
-        }, true)
+        }
+
+        const throttle = (callback, delay) =>{
+            let canSlide = true;
+
+            return (...args) =>{
+                if(canSlide){
+                    callback(...args);
+                    canSlide = false;
+                    setTimeout(() => canSlide = true, delay)
+                }
+            }
+        }
+
+        window.addEventListener('wheel', throttle((e) =>{
+            const direction = e.deltaY > 0 ? 1 : -1;
+            moveSlide(direction)
+        }, 500))
 
 
     </script>
