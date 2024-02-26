@@ -21,3 +21,8 @@ body{
     color: var(--black-hsl);
     background-color: var(--lightAccent-hsl);
 }
+
+section{
+    width: 100vw;
+    height: 100vh;
+}
